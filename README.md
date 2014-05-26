@@ -18,7 +18,7 @@ Installation
 -----------
 
 ```sh
-npm install bootstrap-loader --save
+npm install express-bootloader --save
 ```
 
 example
