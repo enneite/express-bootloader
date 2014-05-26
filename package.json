@@ -3,7 +3,8 @@
   "author": "enneite",
   "description" : "bootstrap-loader is used to boot an express application : set properties, define middlewares, intialize routes, db connections, ...",
   "repository": {
-	  
+	  "type" : "git",
+	  "url" : "https://github.com/enneite/express-bootloader.git"
   },
   "version": "0.1.2",
   "optionnalDependencies": {
