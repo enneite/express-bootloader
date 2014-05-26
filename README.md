@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 bootstrap-loader
 ================
 .
@@ -97,3 +98,9 @@ http.createServer(app).listen(app.get('port'), function(){
 ```
 
  
+=======
+express-bootloader
+==================
+
+bootstrap-loader is used to boot an express application : set properties, define middlewares, intialize routes, db connections, ...
+>>>>>>> 1fab92445b9719d22bd9bff77c13288a9df9ce80
