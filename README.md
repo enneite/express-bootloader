@@ -82,7 +82,7 @@ By default create the configuration files in  a directory named "/configs"
 ```json
 var express = require('express')
   , http = require('http')
-  , bootloader = require('./express-bootloader');
+  , bootloader = require('express-bootloader');
 
 var app = express();
 
