@@ -1,0 +1,15 @@
+{
+  "name": "express-bootloader",
+  "author": "enneite",
+  "description" : "bootstrap-loader is used to boot an express application : set properties, define middlewares, intialize routes, db connections, ...",
+  "repository": {
+	  
+  },
+  "version": "0.1.0",
+  "optionnalDependencies": {
+    "mongoose": "^3.8.8"
+  },
+  "engines" : {
+	  "node":"*"
+  }
+}
