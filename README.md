@@ -4,7 +4,7 @@ bootstrap-loader
 
 bootstrap-loader is an node.js module used to boot an express application : 
 
-Set application properties and db connections, routes initialization
+Set application properties and db connections ...
 
 WARNING : v0.2.0 isn't comptabible with 0.1.*
 
@@ -29,7 +29,7 @@ example
 
 By default create the configuration files in  a directory named "/configs"
 
-* app.json :
+* bootloader.json :
 
 ```json
 {
@@ -53,7 +53,7 @@ By default create the configuration files in  a directory named "/configs"
 // [...]
 
 ```javascript
-var bootloader = require('../express-bootloader');
+var bootloader = require('express-bootloader');
 
 var app = express();
 
