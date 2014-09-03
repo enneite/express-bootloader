@@ -2,24 +2,27 @@ bootstrap-loader
 ================
 .
 
-
-
-
 bootstrap-loader is an node.js module used to boot an express application : 
 
-Set application properties, define middlewares used by the application, db connections, routes initialization, ...
+Set application properties and db connections, routes initialization
+
+WARNING : v0.2.0 isn't comptabible with 0.1.*
 
 
-The boot-loader module need to read two configuration files (json format) :
- - app.json (general configuration)
- - routes.json (routes definition)
+The boot-loader module need to read one configuration files (json format) :
+ - bootloader.json (general configuration)
  
 Installation
 -----------
+You can install it with npm :
 
 ```sh
 npm install express-bootloader --save
 ```
+
+Or you can registrer it in the package.json of your express web application
+
+
 
 example
 --------
@@ -30,69 +33,37 @@ By default create the configuration files in  a directory named "/configs"
 
 ```json
 {
-	"application" : {
-		"port" : 8080,
-		
-		"view" : { 
-			"engine" : "ejs",
-			"path" : "/views"			      
-		},
-		"custom" :{
-			
+    "bootloader" :{
+    	"db" : {
+	        "mongodb" : {
+	            "uri" : "mongodb://localhost/test"
+	        }
+	    },
+		"settings" : {
+			"port" : 3000,
+			"views" : "views",
+			"view engine" : "ejs"
 		}
-	},
-	"static_dir" : "/public",
-	"route" : {
-		"path" : "/routes"
-	},
-	"db" : {
-		"mongodb" : {
-			"host"   : "localhost",
-			"dbname" : "test"
-		}
-	}
+    }    
 }
 ```
-* routes.json :
 
-```json
-[
-    {
-	    "pattern"   : "/",
-	    "route"     : "index",
-	    "method"  : "index",
-	    "verb"    : "GET",
-	    "_comment"  : "default page"
-    },
-    {
-        "pattern"   : "/users",
-	    "route"     : "account",
-	    "method"  : "list",
-	    "verb"    : "GET",
-	    "_comment"  : "users list"
-    }
-]
+* app.js :
 
-```
+// [...]
 
-
-* server.js :
-
-
-```json
-var express = require('express')
-  , http = require('http')
-  , bootloader = require('express-bootloader');
+```javascript
+var bootloader = require('../express-bootloader');
 
 var app = express();
 
-bootloader.init(app, express, __dirname); 
-// if any config directory is specified, try to use __dirname + '/configs'
-// bootloader.init(app, express, _dirname, __dirname + '/myConfigsDirectory');
+bootloader.init(app,__dirname);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+// uncomment after placing your favicon in /public
+//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
+
+// [...]
 
 ```
 
