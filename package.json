@@ -1,21 +1,22 @@
 {
   "name": "express-bootloader",
   "author": "enneite",
-  "description" : "bootstrap-loader is used to boot an express application : set properties, define middlewares, intialize routes, db connections, ...",
+  "description": "bootstrap-loader is used to boot an express application : set properties, define middlewares, intialize routes, db connections, ...",
   "repository": {
-	  "type" : "git",
-	  "url" : "https://github.com/enneite/express-bootloader.git"
+    "type": "git",
+    "url": "https://github.com/enneite/express-bootloader.git"
   },
-  "version": "0.2.1",
+  "version": "0.2.2",
   "dependencies": {
     "mongoose": "^3.8.8",
-    "nconf":">=0.6.9"
+    "nconf": ">=0.6.9"
   },
   "devDependencies": {
-	    "mocha": ">=1.21.4"
-	    	
-	  },
-  "engines" : {
-	  "node":"*"
+    "chai": "^1.9.1",
+    "express": "^4.9.0",
+    "mocha": ">=1.21.4"
+  },
+  "engines": {
+    "node": "*"
   }
 }
